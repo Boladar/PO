@@ -10,9 +10,17 @@
 
 class Worker : public Person {
 public:
-    Worker(int id, std::string name,std::string jobName);
+    Worker(time_t creationTine, int id, const std::string &surname, const std::string &name,
+           const std::string &factoryName, int salary);
+
+    const std::string &getFactoryName() const;
+
+    int getSalary() const;
+
 protected:
-    std::string jobName;
+    std::string factoryName;
+private:
+    int salary;
 };
 
 

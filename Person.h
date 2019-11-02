@@ -16,6 +16,10 @@ private:
     std::string surname;
 protected:
     std::string name;
+public:
+    const std::string &getSurname() const;
+
+    const std::string &getName() const;
 };
 
 

@@ -4,6 +4,14 @@
 
 #include "Worker.h"
 
-Worker::Worker(int id, std::string name, std::string jobName) : Person(id, name) {
-    this->jobName = jobName;
+Worker::Worker(time_t creationTine, int id, const std::string &surname, const std::string &name,
+               const std::string &factoryName, int salary) : Person(creationTine, id, surname, name),
+                                                             factoryName(factoryName), salary(salary) {}
+
+const std::string &Worker::getFactoryName() const {
+    return factoryName;
+}
+
+int Worker::getSalary() const {
+    return salary;
 }
