@@ -7,6 +7,7 @@
 
 
 #include <ctime>
+using namespace std;
 
 class DatabaseElement {
 public:
@@ -16,9 +17,9 @@ private:
 protected:
     int id;
 public:
-    time_t getCreationTine() const;
-
-    int getId() const;
+    time_t getCreationTine();
+    int getId();
+    void Print();
 };
 
 
