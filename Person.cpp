@@ -4,6 +4,5 @@
 
 #include "Person.h"
 
-Person::Person(int id,std::string name) : DatabaseElement(id) {
-    this->name = name;
-}
+Person::Person(time_t creationTine, int id, std::string surname, std::string name) : DatabaseElement(
+        creationTine, id), surname(surname), name(name) {}

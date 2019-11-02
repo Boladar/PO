@@ -6,12 +6,19 @@
 #define PO_DATABASEELEMENT_H
 
 
+#include <ctime>
+
 class DatabaseElement {
 public:
-    DatabaseElement(int id);
+    DatabaseElement(time_t creationTine, int id);
 private:
+    time_t creationTine;
 protected:
-    int ID;
+    int id;
+public:
+    time_t getCreationTine() const;
+
+    int getId() const;
 };
 
 
