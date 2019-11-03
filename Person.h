@@ -18,6 +18,8 @@ protected:
     std::string name;
 public:
     void print() override;
+
+    void save(fstream &file) override;
 };
 
 

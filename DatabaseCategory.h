@@ -33,9 +33,15 @@ public:
         children.push_back(element3);
     }
 
-    void printName(int indentLevel) override{
+    string getName(){
         string name = typeid(T).name();
         name.erase(remove_if(name.begin(), name.end(), [](char c) { return !isalpha(c); } ), name.end());
+
+        return name;
+    }
+
+    void printName(int indentLevel) override{
+        string name = getName();
 
         if(indentLevel >0 )
             cout << "\t";

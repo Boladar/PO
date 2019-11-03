@@ -16,6 +16,8 @@ public:
 
     void print() override;
 
+    void save(fstream &file) override;
+
 private:
     string principalName;
 };

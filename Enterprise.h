@@ -17,6 +17,8 @@ private:
 public:
     Enterprise();
     void print() override;
+
+    void save(fstream &file) override;
 };
 
 

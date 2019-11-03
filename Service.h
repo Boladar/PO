@@ -12,6 +12,8 @@ class Service : public Polish {
 public:
     Service();
     void print() override;
+    void save(fstream &file) override;
+
 private:
     string typeOfService;
 protected:

@@ -15,6 +15,8 @@ public:
 
     void print() override;
 
+    void save(fstream &file) override;
+
 protected:
     string name;
 private:

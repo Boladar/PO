@@ -24,6 +24,7 @@ public:
     void printID(int indentLevel);
     virtual void print();
     bool operator==(const DatabaseElement& other);
+    virtual void save(fstream& file);
 };
 
 #endif //PO_DATABASEELEMENT_H

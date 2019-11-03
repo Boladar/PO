@@ -91,6 +91,11 @@ public:
         }else
         cout << "cannot show object of id : " << id << ", it is not present in the current leaf" << endl;
     }
+
+    void Save(fstream& file) override {
+        file << this->getName() << this->elements.size() << "\t";
+
+    }
 };
 
 

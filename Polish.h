@@ -15,6 +15,8 @@ public:
     Polish();
     void print() override;
 
+    void save(fstream &file) override;
+
 private:
     string airPollutionIndicator;
 };

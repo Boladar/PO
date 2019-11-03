@@ -6,6 +6,8 @@
 #define PO_CATEGORY_H
 
 
+#include <fstream>
+
 class Category {
 public:
     Category() = default;
@@ -23,6 +25,10 @@ public:
     virtual void ShowObject(int id){
         cout << "cannot show object from a directory that is not a leaf" << endl;
     }
+    virtual void Save(fstream& file){
+
+    }
+
 };
 
 #endif //PO_CATEGORY_H

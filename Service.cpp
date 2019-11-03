@@ -2,6 +2,8 @@
 // Created by aleks on 02.11.2019.
 //
 
+#include <iostream>
+#include <fstream>
 #include "Service.h"
 
 Service::Service() : Polish(){
@@ -10,5 +12,10 @@ Service::Service() : Polish(){
 
 void Service::print() {
     Polish::print();
+    cout << " | typeOfService : " << typeOfService << " | target : " << target << endl;
 }
 
+void Service::save(fstream &file) {
+    Polish::save(file);
+    file << typeOfService << target << "\n";
+}

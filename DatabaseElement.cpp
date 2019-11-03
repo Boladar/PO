@@ -2,6 +2,7 @@
 // Created by Boladar on 29.10.2019.
 //
 
+#include <fstream>
 #include <iostream>
 #include "DatabaseElement.h"
 
@@ -40,5 +41,9 @@ void DatabaseElement::printIndent(int indentLevel) {
 void DatabaseElement::print() {
     cout << " | id : " << id << " | creationTime:  " << creationTine;
 
+}
+
+void DatabaseElement::save(fstream &file) {
+   file << id << creationTine;
 }
 

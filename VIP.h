@@ -18,6 +18,8 @@ private:
     std::string favouriteCar;
 public:
     void print() override;
+
+    void save(fstream &file) override;
 };
 
 

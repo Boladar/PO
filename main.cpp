@@ -61,6 +61,7 @@ int main() {
         vector<string> parsedInput(istream_iterator<string>{iss},istream_iterator<string>());
 
         string command = parsedInput[0];
+        fstream file;
 
         if(command == "CD"){
             string requestedDirectory = parsedInput[1];
@@ -90,9 +91,15 @@ int main() {
 
         }else if(command == "SAVE"){
 
-            for(auto const&[key,val] : databaseDictionary){
-                cout << key << ", " << val << endl;
+            file.open(parsedInput[1], fstream::out);
+            if(file.good()){
+                for(auto const&[key,val] : databaseDictionary){
+                    cout << key << ", " << val << endl;
+                    val->Save(file);
+                }
             }
+
+            file.close();
 
         }else if(command == "READ"){
 

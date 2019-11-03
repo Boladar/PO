@@ -13,6 +13,8 @@ public:
     Worker();
     void print() override;
 
+    void save(fstream &file) override;
+
 protected:
     string factoryName;
 private:

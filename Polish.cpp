@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "Polish.h"
 
 
@@ -13,4 +14,9 @@ Polish::Polish() : National(){
 void Polish::print() {
     National::print();
     cout << " | voivodeship : " << voivodeship << " | airPollutionIndicator : " << airPollutionIndicator;
+}
+
+void Polish::save(fstream &file) {
+    National::save(file);
+    file << voivodeship << airPollutionIndicator;
 }

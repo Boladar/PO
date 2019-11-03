@@ -12,3 +12,6 @@ void Enterprise::print() {
     Foreign::print();
 }
 
+void Enterprise::save(fstream &file) {
+    Polish::save(file);
+}
