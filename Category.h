@@ -9,8 +9,8 @@
 class Category {
 public:
     Category() = default;
-    virtual void print(int indentLevel) {};
-    virtual void printChildren(int indentLevel){};
+    virtual void printName(int indentLevel) {};
+    virtual void printChildrenNames(int indentLevel){};
 };
 
 #endif //PO_CATEGORY_H

@@ -12,31 +12,80 @@
 #include "Foreign.h"
 #include "Enterprise.h"
 
+#include <map>
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    auto* enterprise = new DatabaseCategory<Enterprise>();
+    auto* educational = new DatabaseCategory<Educational>();
+    auto* service = new DatabaseCategory<Service>();
 
-    DatabaseCategory<Enterprise> enterprise;
-    DatabaseCategory<Educational> educational;
-    DatabaseCategory<Service> service;
+    auto* foreign =new DatabaseCategory<Foreign>(enterprise);
+    auto* polish = new DatabaseCategory<Polish>(service,educational, enterprise);
 
-    DatabaseCategory<Foreign> foreign = DatabaseCategory<Foreign>(enterprise);
-    DatabaseCategory<Polish> polish = DatabaseCategory<Polish>(service,educational);
+    auto* privateInstitution = new DatabaseCategory<Private>(foreign);
+    auto* national = new DatabaseCategory<National>(polish);
 
-    DatabaseCategory<Private> privateInstitution = DatabaseCategory<Private>(foreign);
-    DatabaseCategory<National> national = DatabaseCategory<National>(polish);
+    auto* institution = new DatabaseCategory<Institution>(national, privateInstitution);
 
-    DatabaseCategory<Institution> institution = DatabaseCategory<Institution>(national);
+    auto* worker = new DatabaseCategory<Worker>();
+    auto* vip = new DatabaseCategory<VIP>();
 
-    DatabaseCategory<Worker> worker;
-    DatabaseCategory<VIP> vip;
+    auto* person = new DatabaseCategory<Person>(vip,worker);
 
-    DatabaseCategory<Person> person = DatabaseCategory<Person>(vip,worker);
+    auto* element = new DatabaseCategory<DatabaseElement>(person,institution);
 
-    DatabaseCategory<DatabaseElement> element = DatabaseCategory<DatabaseElement>(person,institution);
+    Category* current = element;
+    map<string,Category*> databaseDictionary;
 
-    Category  &currentCategory = element;
+    databaseDictionary["DatabaseElement"] = element;
+    databaseDictionary["Person"] = person;
+    databaseDictionary["VIP"] = vip;
+    databaseDictionary["Worker"] = worker;
+    databaseDictionary["Institution"] = institution;
+    databaseDictionary["National"] = national;
+    databaseDictionary["Polish"] = polish;
+    databaseDictionary["Service"] = service;
+    databaseDictionary["Educational"] = educational;
+    databaseDictionary["Private"] = privateInstitution;
+    databaseDictionary["Foreign"] = foreign;
+    databaseDictionary["Enterprise"] = enterprise;
 
-    currentCategory.printChildren(0);
+    while(true){
+        string input;
+        getline(cin,input);
+
+        string command = input.substr(0, input.find(" "));
+
+        if(command == "CD"){
+            string requestedDirectory = input.substr(1, input.find(" "));
+
+            cout << "cur" << requestedDirectory;
+            current = databaseDictionary[requestedDirectory];
+
+        }else if(command == "MO"){
+
+        }else if(command == "DO"){
+
+        }else if(command == "MDO"){
+
+        }else if(command == "DIR"){
+            current->printChildrenNames(0);
+        }else if(command == "SHOW"){
+
+        }else if(command == " SAVE"){
+
+        }else if(command == "READ"){
+
+        }else if( command == "TREE"){
+            Category * root = element;
+            root->printChildrenNames(0);
+        }else if( command == "EXIT"){
+            break;
+        }
+
+    }
+
 
     return 0;
+
 }
