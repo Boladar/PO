@@ -14,3 +14,5 @@ const std::string &Person::getSurname() const {
 const std::string &Person::getName() const {
     return name;
 }
+
+Person::Person() : DatabaseElement() {}

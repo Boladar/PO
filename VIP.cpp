@@ -15,3 +15,7 @@ int VIP::getSecurityLevel() const {
 const std::string &VIP::getFavouriteCar() const {
     return favouriteCar;
 }
+
+VIP::VIP() : Person() {
+
+}

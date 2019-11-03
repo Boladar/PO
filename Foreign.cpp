@@ -17,3 +17,7 @@ const string &Foreign::getCountryOfOrigin() const {
 const string &Foreign::getOfficialLanguage() const {
     return officialLanguage;
 }
+
+Foreign::Foreign()  : Private(){
+
+}

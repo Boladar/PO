@@ -12,6 +12,7 @@ using namespace std;
 class DatabaseElement {
 public:
     DatabaseElement(time_t creationTine, int id);
+    DatabaseElement();
 private:
     time_t creationTine;
 protected:

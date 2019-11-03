@@ -15,3 +15,7 @@ const std::string &Worker::getFactoryName() const {
 int Worker::getSalary() const {
     return salary;
 }
+
+Worker::Worker() : Person() {
+
+}

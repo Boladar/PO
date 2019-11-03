@@ -14,6 +14,8 @@ protected:
     string industryName;
 private:
     string CEO;
+public:
+    Enterprise();
 };
 
 

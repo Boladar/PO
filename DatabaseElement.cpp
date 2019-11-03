@@ -9,6 +9,8 @@ DatabaseElement::DatabaseElement(time_t creationTine, int id) :
 creationTine(creationTine),
 id(id) {}
 
+DatabaseElement::DatabaseElement() {}
+
 time_t DatabaseElement::getCreationTine() {
     return creationTine;
 }

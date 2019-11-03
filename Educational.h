@@ -15,6 +15,7 @@ public:
     Educational(time_t creationTine, int id, const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
                 const string &submitter, const string &voivodeship, int airPollutionIndicator, int numberOfStudents,
                 const string &principalName);
+    Educational();
 
     int getNumberOfStudents() const;
 

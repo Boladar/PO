@@ -15,7 +15,7 @@ protected:
 public:
     Foreign(time_t creationTine, int id, const string &name, int numberOfEmployees, int numberOfParkingSpaces,
             const string &website, const string &countryOfOrigin, const string &officialLanguage);
-
+    Foreign();
 protected:
 public:
     const string &getCountryOfOrigin() const;

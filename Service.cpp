@@ -16,3 +16,7 @@ Service::Service(time_t creationTine, int id, const string &name, int numberOfEm
                                                                                                  typeOfService(
                                                                                                          typeOfservice),
                                                                                                  target(target) {}
+
+Service::Service() : Polish(){
+
+}

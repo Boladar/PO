@@ -17,3 +17,7 @@ int Educational::getNumberOfStudents() const {
 const string &Educational::getPrincipalName() const {
     return principalName;
 }
+
+Educational::Educational() : Polish(){
+
+}

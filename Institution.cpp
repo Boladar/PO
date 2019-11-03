@@ -7,6 +7,8 @@
 Institution::Institution(time_t creationTine, int id, const string &name, int numberOfEmployees) : DatabaseElement(
         creationTine, id), name(name), numberOfEmployees(numberOfEmployees) {}
 
+Institution::Institution() : DatabaseElement(){}
+
 const string &Institution::getName() const {
     return name;
 }

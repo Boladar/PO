@@ -10,3 +10,7 @@ National::National(time_t creationTine, int id, const string &name, int numberOf
                                                                                nationalOwnershipPercentage(
                                                                                        nationalOwnershipPercentage),
                                                                                submitter(submitter) {}
+
+National::National() : Institution() {
+
+}

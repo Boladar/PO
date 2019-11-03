@@ -3,3 +3,7 @@
 //
 
 #include "Enterprise.h"
+
+Enterprise::Enterprise() : Polish(){
+
+}

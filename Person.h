@@ -11,7 +11,7 @@
 class Person : public DatabaseElement{
 public:
     Person(time_t creationTine, int id, std::string surname, std::string name);
-
+    Person();
 private:
     std::string surname;
 protected:

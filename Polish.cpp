@@ -14,3 +14,7 @@ Polish::Polish(time_t creationTine, int id, const string &name, int numberOfEmpl
                                                                                                         voivodeship),
                                                                                                 airPollutionIndicator(
                                                                                                         airPollutionIndicator) {}
+
+Polish::Polish() : National(){
+
+}

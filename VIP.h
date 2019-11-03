@@ -12,7 +12,7 @@ class VIP : public Person {
 public:
     VIP(time_t creationTine, int id, const std::string &surname, const std::string &name, int securityLevel,
         const std::string &favouriteCar);
-
+    VIP();
 protected:
     int securityLevel;
 private:

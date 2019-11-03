@@ -16,6 +16,7 @@ private:
 public:
     Private(time_t creationTine, int id, const string &name, int numberOfEmployees, int numberOfParkingSpaces,
             const string &website);
+    Private();
 
     int getNumberOfParkingSpaces() const;
 

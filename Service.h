@@ -13,6 +13,7 @@ public:
     Service(time_t creationTine, int id, const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
             const string &submitter, const string &voivodeship, int airPollutionIndicator, const string &typeOfservice,
             const string &target);
+    Service();
 private:
     string typeOfService;
 protected:
