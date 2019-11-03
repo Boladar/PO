@@ -10,7 +10,7 @@
 
 class Person : public DatabaseElement{
 public:
-    Person(time_t creationTine, int id, std::string surname, std::string name);
+    Person(std::string surname, std::string name);
     Person();
 private:
     std::string surname;
@@ -18,6 +18,8 @@ protected:
     std::string name;
 public:
     const std::string &getSurname() const;
+
+    void print() override;
 
     const std::string &getName() const;
 };

@@ -12,9 +12,12 @@ class Polish : public National{
 protected:
     string voivodeship;
 public:
-    Polish(time_t creationTine, int id, const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
+    Polish(const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
            const string &submitter, const string &voivodeship, int airPollutionIndicator);
     Polish();
+
+    void print() override;
+
 private:
     int airPollutionIndicator;
 };

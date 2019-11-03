@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include "DatabaseCategory.h"
 #include "VIP.h"
 #include "Worker.h"
 #include "Institution.h"
@@ -11,8 +10,11 @@
 #include "Private.h"
 #include "Foreign.h"
 #include "Enterprise.h"
+#include "DatabaseLeaf.h"
 
 #include <map>
+#include <sstream>
+#include <iterator>
 
 int main() {
     auto* enterprise = new DatabaseCategory<Enterprise>();
@@ -28,7 +30,7 @@ int main() {
     auto* institution = new DatabaseCategory<Institution>(national, privateInstitution);
 
     auto* worker = new DatabaseCategory<Worker>();
-    auto* vip = new DatabaseCategory<VIP>();
+    auto* vip = new DatabaseLeaf<VIP>();
 
     auto* person = new DatabaseCategory<Person>(vip,worker);
 
@@ -37,40 +39,54 @@ int main() {
     Category* current = element;
     map<string,Category*> databaseDictionary;
 
-    databaseDictionary["DatabaseElement"] = element;
-    databaseDictionary["Person"] = person;
-    databaseDictionary["VIP"] = vip;
-    databaseDictionary["Worker"] = worker;
-    databaseDictionary["Institution"] = institution;
-    databaseDictionary["National"] = national;
-    databaseDictionary["Polish"] = polish;
-    databaseDictionary["Service"] = service;
-    databaseDictionary["Educational"] = educational;
-    databaseDictionary["Private"] = privateInstitution;
-    databaseDictionary["Foreign"] = foreign;
-    databaseDictionary["Enterprise"] = enterprise;
+    databaseDictionary.insert(pair<string,Category*>("DatabaseElement",element));
+    databaseDictionary.insert(pair<string,Category*>("Person",person));
+    databaseDictionary.insert(pair<string,Category*>("VIP",vip));
+    databaseDictionary.insert(pair<string,Category*>("Worker",worker));
+    databaseDictionary.insert(pair<string,Category*>("Institution",institution));
+    databaseDictionary.insert(pair<string,Category*>("National",national));
+    databaseDictionary.insert(pair<string,Category*>("Polish",polish));
+    databaseDictionary.insert(pair<string,Category*>("Service",service));
+    databaseDictionary.insert(pair<string,Category*>("Educational",educational));
+    databaseDictionary.insert(pair<string,Category*>("Private",privateInstitution));
+    databaseDictionary.insert(pair<string,Category*>("Foreign",foreign));
+    databaseDictionary.insert(pair<string,Category*>("Enterprise",enterprise));
+
 
     while(true){
         string input;
         getline(cin,input);
 
-        string command = input.substr(0, input.find(" "));
+        istringstream iss(input);
+        vector<string> parsedInput(istream_iterator<string>{iss},istream_iterator<string>());
+
+        string command = parsedInput[0];
 
         if(command == "CD"){
-            string requestedDirectory = input.substr(1, input.find(" "));
+            string requestedDirectory = parsedInput[1];
 
-            cout << "cur" << requestedDirectory;
-            current = databaseDictionary[requestedDirectory];
+            cout << "cur: " << requestedDirectory;
+            current = databaseDictionary.at(requestedDirectory);
+
+            current->printName(2);
 
         }else if(command == "MO"){
 
+            current->createObject();
+
         }else if(command == "DO"){
 
+            current->DeleteObject(stoi(parsedInput[1]));
+
         }else if(command == "MDO"){
+
+            current->ModifyObject(stoi(parsedInput[1]));
 
         }else if(command == "DIR"){
             current->printChildrenNames(0);
         }else if(command == "SHOW"){
+
+            current->ShowObject(stoi(parsedInput[1]));
 
         }else if(command == " SAVE"){
 

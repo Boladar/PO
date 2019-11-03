@@ -8,19 +8,21 @@
 
 #include "Institution.h"
 
-class Private : public Institution {
+class Private : public virtual Institution {
 protected:
     int numberOfParkingSpaces;
 private:
     string website;
 public:
-    Private(time_t creationTine, int id, const string &name, int numberOfEmployees, int numberOfParkingSpaces,
+    Private( const string &name, int numberOfEmployees, int numberOfParkingSpaces,
             const string &website);
     Private();
 
     int getNumberOfParkingSpaces() const;
 
     const string &getWebsite() const;
+
+    void print() override;
 };
 
 

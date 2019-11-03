@@ -2,11 +2,12 @@
 // Created by aleks on 02.11.2019.
 //
 
+#include <iostream>
 #include "Foreign.h"
 
-Foreign::Foreign(time_t creationTine, int id, const string &name, int numberOfEmployees, int numberOfParkingSpaces,
+Foreign::Foreign( const string &name, int numberOfEmployees, int numberOfParkingSpaces,
                  const string &website, const string &countryOfOrigin, const string &officialLanguage) : Private(
-        creationTine, id, name, numberOfEmployees, numberOfParkingSpaces, website), countryOfOrigin(countryOfOrigin),
+       name, numberOfEmployees, numberOfParkingSpaces, website), countryOfOrigin(countryOfOrigin),
                                                                                                          officialLanguage(
                                                                                                                  officialLanguage) {}
 
@@ -20,4 +21,9 @@ const string &Foreign::getOfficialLanguage() const {
 
 Foreign::Foreign()  : Private(){
 
+}
+
+void Foreign::print() {
+    Private::print();
+    cout << " | countryOfOrigin : " << countryOfOrigin << " | officialLanguage : " << officialLanguage;
 }

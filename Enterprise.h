@@ -16,6 +16,7 @@ private:
     string CEO;
 public:
     Enterprise();
+    void print() override;
 };
 
 

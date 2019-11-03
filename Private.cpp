@@ -2,10 +2,11 @@
 // Created by aleks on 02.11.2019.
 //
 
+#include <iostream>
 #include "Private.h"
 
-Private::Private(time_t creationTine, int id, const string &name, int numberOfEmployees, int numberOfParkingSpaces,
-                 const string &website) : Institution(creationTine, id, name, numberOfEmployees),
+Private::Private(const string &name, int numberOfEmployees, int numberOfParkingSpaces,
+                 const string &website) : Institution( name, numberOfEmployees),
                                           numberOfParkingSpaces(numberOfParkingSpaces), website(website) {}
 Private::Private() : Institution(){}
 
@@ -15,4 +16,9 @@ int Private::getNumberOfParkingSpaces() const {
 
 const string &Private::getWebsite() const {
     return website;
+}
+
+void Private::print() {
+    Institution::print();
+    cout << " | numberOfParkingSpaces : " << numberOfParkingSpaces << " | website : " << website;
 }

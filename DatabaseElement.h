@@ -11,17 +11,20 @@ using namespace std;
 
 class DatabaseElement {
 public:
-    DatabaseElement(time_t creationTine, int id);
     DatabaseElement();
 private:
     time_t creationTine;
 protected:
     int id;
+    inline static int numberOfInstances = 0;
+    static void printIndent(int indentLevel);
 public:
     time_t getCreationTine();
     int getId();
-    void Print();
+    void printID(int indentLevel);
+    virtual void print();
+    bool operator==(const DatabaseElement& other);
 };
 
-
 #endif //PO_DATABASEELEMENT_H
+

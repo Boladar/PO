@@ -7,3 +7,8 @@
 Enterprise::Enterprise() : Polish(){
 
 }
+
+void Enterprise::print() {
+    Foreign::print();
+}
+

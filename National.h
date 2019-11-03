@@ -8,15 +8,17 @@
 
 #include "Institution.h"
 
-class National : public Institution{
+class National : public virtual Institution{
 protected:
     int nationalOwnershipPercentage;
 private:
     string submitter;
 public:
-    National(time_t creationTine, int id, const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
+    National(const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
              const string &submitter);
     National();
+
+    void print() override;
 };
 
 

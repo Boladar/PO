@@ -10,7 +10,7 @@
 
 class VIP : public Person {
 public:
-    VIP(time_t creationTine, int id, const std::string &surname, const std::string &name, int securityLevel,
+    VIP(const std::string &surname, const std::string &name, int securityLevel,
         const std::string &favouriteCar);
     VIP();
 protected:
@@ -19,6 +19,8 @@ private:
     std::string favouriteCar;
 public:
     int getSecurityLevel() const;
+
+    void print() override;
 
     const std::string &getFavouriteCar() const;
 };

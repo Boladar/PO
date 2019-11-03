@@ -4,10 +4,9 @@
 
 #include "Service.h"
 
-Service::Service(time_t creationTine, int id, const string &name, int numberOfEmployees,
+Service::Service( const string &name, int numberOfEmployees,
                  int nationalOwnershipPercentage, const string &submitter, const string &voivodeship,
-                 int airPollutionIndicator, const string &typeOfservice, const string &target) : Polish(creationTine,
-                                                                                                        id, name,
+                 int airPollutionIndicator, const string &typeOfservice, const string &target) : Polish( name,
                                                                                                         numberOfEmployees,
                                                                                                         nationalOwnershipPercentage,
                                                                                                         submitter,
@@ -20,3 +19,8 @@ Service::Service(time_t creationTine, int id, const string &name, int numberOfEm
 Service::Service() : Polish(){
 
 }
+
+void Service::print() {
+    Polish::print();
+}
+

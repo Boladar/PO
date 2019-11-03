@@ -2,10 +2,11 @@
 // Created by aleks on 02.11.2019.
 //
 
+#include <iostream>
 #include "National.h"
 
-National::National(time_t creationTine, int id, const string &name, int numberOfEmployees,
-                   int nationalOwnershipPercentage, const string &submitter) : Institution(creationTine, id, name,
+National::National(const string &name, int numberOfEmployees,
+                   int nationalOwnershipPercentage, const string &submitter) : Institution( name,
                                                                                            numberOfEmployees),
                                                                                nationalOwnershipPercentage(
                                                                                        nationalOwnershipPercentage),
@@ -13,4 +14,9 @@ National::National(time_t creationTine, int id, const string &name, int numberOf
 
 National::National() : Institution() {
 
+}
+
+void National::print() {
+    Institution::print();
+    cout << " | nationalOwnershipPercentage : " << nationalOwnershipPercentage << " | submitter : " << submitter;
 }

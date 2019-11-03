@@ -11,13 +11,15 @@
 class Institution : public DatabaseElement{
 protected:
 public:
-    Institution(time_t creationTine, int id, const string &name, int numberOfEmployees);
+    Institution(const string &name, int numberOfEmployees);
 
     Institution();
 
     const string &getName() const;
 
     int getNumberOfEmployees() const;
+
+    void print() override;
 
 protected:
     string name;
