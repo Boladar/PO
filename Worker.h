@@ -10,20 +10,13 @@
 
 class Worker : public Person {
 public:
-    Worker(const std::string &surname, const std::string &name,
-           const std::string &factoryName, int salary);
     Worker();
-
-    const std::string &getFactoryName() const;
-
-    int getSalary() const;
-
     void print() override;
 
 protected:
-    std::string factoryName;
+    string factoryName;
 private:
-    int salary;
+    string salary;
 };
 
 

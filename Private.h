@@ -10,18 +10,11 @@
 
 class Private : public virtual Institution {
 protected:
-    int numberOfParkingSpaces;
+    string numberOfParkingSpaces;
 private:
     string website;
 public:
-    Private( const string &name, int numberOfEmployees, int numberOfParkingSpaces,
-            const string &website);
     Private();
-
-    int getNumberOfParkingSpaces() const;
-
-    const string &getWebsite() const;
-
     void print() override;
 };
 

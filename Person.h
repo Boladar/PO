@@ -17,11 +17,7 @@ private:
 protected:
     std::string name;
 public:
-    const std::string &getSurname() const;
-
     void print() override;
-
-    const std::string &getName() const;
 };
 
 

@@ -10,16 +10,11 @@
 
 class Educational : public Polish {
 protected:
-    int numberOfStudents;
+    string numberOfStudents;
 public:
-    Educational(const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
-                const string &submitter, const string &voivodeship, int airPollutionIndicator, int numberOfStudents,
-                const string &principalName);
     Educational();
 
-    int getNumberOfStudents() const;
-
-    const string &getPrincipalName() const;
+    void print() override;
 
 private:
     string principalName;

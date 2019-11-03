@@ -9,21 +9,12 @@
 #include "Private.h"
 
 class Foreign : public Private {
-protected:
-    string countryOfOrigin;
-protected:
+
 public:
-    Foreign( const string &name, int numberOfEmployees, int numberOfParkingSpaces,
-            const string &website, const string &countryOfOrigin, const string &officialLanguage);
     Foreign();
-protected:
-public:
-    const string &getCountryOfOrigin() const;
-
-    const string &getOfficialLanguage() const;
-
     void print() override;
-
+private:
+    string countryOfOrigin;
 protected:
     string officialLanguage;
 };

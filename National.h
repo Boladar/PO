@@ -10,14 +10,11 @@
 
 class National : public virtual Institution{
 protected:
-    int nationalOwnershipPercentage;
+    string nationalOwnershipPercentage;
 private:
     string submitter;
 public:
-    National(const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
-             const string &submitter);
     National();
-
     void print() override;
 };
 

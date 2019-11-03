@@ -17,9 +17,9 @@
 #include <iterator>
 
 int main() {
-    auto* enterprise = new DatabaseCategory<Enterprise>();
-    auto* educational = new DatabaseCategory<Educational>();
-    auto* service = new DatabaseCategory<Service>();
+    auto* enterprise = new DatabaseLeaf<Enterprise>();
+    auto* educational = new DatabaseLeaf<Educational>();
+    auto* service = new DatabaseLeaf<Service>();
 
     auto* foreign =new DatabaseCategory<Foreign>(enterprise);
     auto* polish = new DatabaseCategory<Polish>(service,educational, enterprise);
@@ -29,7 +29,7 @@ int main() {
 
     auto* institution = new DatabaseCategory<Institution>(national, privateInstitution);
 
-    auto* worker = new DatabaseCategory<Worker>();
+    auto* worker = new DatabaseLeaf<Worker>();
     auto* vip = new DatabaseLeaf<VIP>();
 
     auto* person = new DatabaseCategory<Person>(vip,worker);
@@ -88,7 +88,11 @@ int main() {
 
             current->ShowObject(stoi(parsedInput[1]));
 
-        }else if(command == " SAVE"){
+        }else if(command == "SAVE"){
+
+            for(auto const&[key,val] : databaseDictionary){
+                cout << key << ", " << val << endl;
+            }
 
         }else if(command == "READ"){
 

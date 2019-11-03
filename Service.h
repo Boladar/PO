@@ -10,13 +10,8 @@
 
 class Service : public Polish {
 public:
-    Service(const string &name, int numberOfEmployees, int nationalOwnershipPercentage,
-            const string &submitter, const string &voivodeship, int airPollutionIndicator, const string &typeOfservice,
-            const string &target);
     Service();
-
     void print() override;
-
 private:
     string typeOfService;
 protected:
