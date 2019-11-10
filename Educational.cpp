@@ -18,5 +18,5 @@ void Educational::print() {
 
 void Educational::save(fstream &file) {
     Polish::save(file);
-    file << numberOfStudents << principalName << "\n";
+    file << numberOfStudents << " "<< principalName << endl;
 }

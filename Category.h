@@ -28,6 +28,9 @@ public:
     virtual void Save(fstream& file){
 
     }
+    virtual void Read(fstream &file, int quantity){
+
+    }
 
 };
 

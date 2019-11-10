@@ -44,6 +44,6 @@ void DatabaseElement::print() {
 }
 
 void DatabaseElement::save(fstream &file) {
-   file << id << creationTine;
+   file << id <<" " <<creationTine<< " ";
 }
 

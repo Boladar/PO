@@ -16,6 +16,8 @@ private:
 public:
     Private();
     void print() override;
+
+    void save(fstream &file) override;
 };
 
 

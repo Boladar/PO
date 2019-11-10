@@ -93,8 +93,22 @@ public:
     }
 
     void Save(fstream& file) override {
-        file << this->getName() << this->elements.size() << "\t";
+        file << this->getName() << " " << this->elements.size() << endl;
 
+        for(int i = 0 ; i < elements.size(); i++){
+            elements[i]->save(file);
+        }
+
+    }
+
+    void Read(fstream &file, int quantity) override {
+
+        for(int i = 0; i < quantity ; i++){
+            this->createObject();
+            DatabaseElement* element = this->elements.back();
+
+
+        }
     }
 };
 

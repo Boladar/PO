@@ -103,6 +103,23 @@ int main() {
 
         }else if(command == "READ"){
 
+            file.open(parsedInput[1], fstream::in);
+            if(file.good()){
+                string name;
+                int numberOfEntries;
+
+                while(!file.eof()) {
+                    file >> name >> numberOfEntries;
+
+                    for( int i = 0; i  < numberOfEntries ; i++){
+
+                    }
+
+                }
+            }
+
+            file.close();
+
         }else if( command == "TREE"){
             Category * root = element;
             root->printChildrenNames(0);

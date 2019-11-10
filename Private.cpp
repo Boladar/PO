@@ -11,3 +11,8 @@ void Private::print() {
     Institution::print();
     cout << " | numberOfParkingSpaces : " << numberOfParkingSpaces << " | website : " << website;
 }
+
+void Private::save(fstream &file) {
+    Institution::save(file);
+    file << numberOfParkingSpaces << " " << website << " ";
+}

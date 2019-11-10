@@ -17,5 +17,6 @@ void Person::print() {
 
 void Person::save(fstream &file) {
     DatabaseElement::save(file);
-    file << name << surname;
+    file << name <<" " << surname << " ";
+
 }

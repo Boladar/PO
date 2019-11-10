@@ -16,5 +16,5 @@ void National::print() {
 
 void National::save(fstream &file) {
     Institution::save(file);
-    file << nationalOwnershipPercentage << submitter;
+    file << nationalOwnershipPercentage<< " " << submitter << " ";
 }

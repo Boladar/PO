@@ -18,5 +18,5 @@ void VIP::print() {
 
 void VIP::save(fstream &file) {
     Person::save(file);
-    file << securityLevel << favouriteCar << "\n";
+    file << securityLevel<< " " << favouriteCar << endl;
 }

@@ -15,5 +15,5 @@ void Institution::print() {
 
 void Institution::save(fstream &file) {
     DatabaseElement::save(file);
-    file << name << numberOfEmployees;
+    file << name << " " << numberOfEmployees << " ";
 }

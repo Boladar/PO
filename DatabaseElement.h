@@ -7,6 +7,7 @@
 
 
 #include <ctime>
+#include <fstream>
 using namespace std;
 
 class DatabaseElement {

@@ -18,5 +18,5 @@ void Polish::print() {
 
 void Polish::save(fstream &file) {
     National::save(file);
-    file << voivodeship << airPollutionIndicator;
+    file << voivodeship << " " << airPollutionIndicator << " ";
 }

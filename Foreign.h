@@ -13,6 +13,9 @@ class Foreign : public Private {
 public:
     Foreign();
     void print() override;
+
+    void save(fstream &file) override;
+
 private:
     string countryOfOrigin;
 protected:

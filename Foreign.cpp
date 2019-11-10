@@ -14,3 +14,8 @@ void Foreign::print() {
     Private::print();
     cout << " | countryOfOrigin : " << countryOfOrigin << " | officialLanguage : " << officialLanguage;
 }
+
+void Foreign::save(fstream &file) {
+    Private::save(file);
+    file << countryOfOrigin << " " << officialLanguage << " ";
+}

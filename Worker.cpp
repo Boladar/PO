@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include <fstream>
 #include "Worker.h"
 
 Worker::Worker() : Person() {
@@ -17,5 +16,5 @@ void Worker::print() {
 
 void Worker::save(fstream &file) {
     Person::save(file);
-    file << factoryName << salary << "\n";
+    file << factoryName << " "<<salary << endl;
 }

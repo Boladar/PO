@@ -17,5 +17,5 @@ void Service::print() {
 
 void Service::save(fstream &file) {
     Polish::save(file);
-    file << typeOfService << target << "\n";
+    file << typeOfService<< " " << target << endl;
 }
