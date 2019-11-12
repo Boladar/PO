@@ -13,7 +13,7 @@ VIP::VIP() : Person() {
 
 void VIP::print() {
     Person::print();
-    cout << securityLevel <<" | " <<favouriteCar << " | " << endl;
+    cout << " | securityLeveL : "<<securityLevel <<" | favouriteCard: " << favouriteCar << endl;
 }
 
 void VIP::save(fstream &file) {

@@ -26,6 +26,7 @@ public:
     virtual void print();
     bool operator==(const DatabaseElement& other);
     virtual void save(fstream& file);
+    virtual void read(istream& input);
 };
 
 #endif //PO_DATABASEELEMENT_H

@@ -47,3 +47,7 @@ void DatabaseElement::save(fstream &file) {
    file << id <<" " <<creationTine<< " ";
 }
 
+void DatabaseElement::read(istream &input) {
+
+}
+
