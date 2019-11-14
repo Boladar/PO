@@ -80,7 +80,7 @@ public:
         int index = findElementID(id);
         if(index >= 0){
             elements[index]->print();
-//            elements[index]->read(cin);
+            elements[index]->read(cin);
         } else
             cout << "cannot modify object of id : " << id << ", it is not present in the current leaf" << endl;
 

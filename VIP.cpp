@@ -25,9 +25,5 @@ void VIP::save(fstream &file) {
 void VIP::read(istream &input) {
     Person::read(input);
 
-    string SsecurityLevel, SfavouriteCar;
-    input >> SsecurityLevel >> SfavouriteCar;
-
-    securityLevel = SsecurityLevel;
-    favouriteCar = SfavouriteCar;
+    input >> securityLevel >> favouriteCar;
 }

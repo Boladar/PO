@@ -25,12 +25,5 @@ void Person::save(fstream &file) {
 }
 
 void Person::read(istream &input) {
-    DatabaseElement::read(input);
-
-    string Sname,Ssurname;
-
-    input>> Sname >> Ssurname;
-
-    name = Sname;
-    surname = Ssurname;
+    input>> name >> surname;
 }

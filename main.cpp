@@ -55,6 +55,10 @@ int main() {
 
     while(true){
         string input;
+
+        cin.clear();
+        fflush(stdin);
+
         getline(cin,input);
 
         istringstream iss(input);
