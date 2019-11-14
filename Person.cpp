@@ -8,7 +8,10 @@
 
 Person::Person(std::string surname, std::string name) : DatabaseElement(), surname(surname), name(name) {}
 
-Person::Person() : DatabaseElement() {}
+Person::Person() : DatabaseElement() {
+    name = "";
+    surname = "";
+}
 
 void Person::print() {
     DatabaseElement::print();
@@ -19,4 +22,15 @@ void Person::save(fstream &file) {
     DatabaseElement::save(file);
     file << name <<" " << surname << " ";
 
+}
+
+void Person::read(istream &input) {
+    DatabaseElement::read(input);
+
+    string Sname,Ssurname;
+
+    input>> Sname >> Ssurname;
+
+    name = Sname;
+    surname = Ssurname;
 }

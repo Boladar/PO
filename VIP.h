@@ -10,7 +10,6 @@
 
 class VIP : public Person {
 public:
-
     VIP();
 protected:
     string securityLevel;
@@ -18,6 +17,8 @@ private:
     std::string favouriteCar;
 public:
     void print() override;
+
+    void read(istream &input) override;
 
     void save(fstream &file) override;
 };

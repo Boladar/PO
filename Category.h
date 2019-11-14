@@ -13,8 +13,10 @@ public:
     Category() = default;
     virtual void printName(int indentLevel) {};
     virtual void printChildrenNames(int indentLevel){};
-    virtual void createObject(){
+
+    virtual int createObject(){
         cout << " cannot create new object in directory that is not a leaf" << endl;
+        return -1;
     };
     virtual void DeleteObject(int id){
         cout << "cannot remove object from a directory that is not a leaf" << endl;

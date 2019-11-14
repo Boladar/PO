@@ -73,7 +73,10 @@ int main() {
 
         }else if(command == "MO"){
 
-            current->createObject();
+            int newID = current->createObject();
+            if(newID != -1 ){
+                current->ModifyObject(newID);
+            }
 
         }else if(command == "DO"){
 

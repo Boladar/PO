@@ -9,11 +9,11 @@
 DatabaseElement::DatabaseElement() {
     this->id = numberOfInstances;
     numberOfInstances++;
-    this->creationTine = time(0);
+    this->creationTime = time(0);
 }
 
 time_t DatabaseElement::getCreationTine() {
-    return creationTine;
+    return creationTime;
 }
 
 int DatabaseElement::getId(){
@@ -39,12 +39,12 @@ void DatabaseElement::printIndent(int indentLevel) {
 }
 
 void DatabaseElement::print() {
-    cout << " | id : " << id << " | creationTime:  " << creationTine;
+    cout << " | id : " << id << " | creationTime:  " << creationTime;
 
 }
 
 void DatabaseElement::save(fstream &file) {
-   file << id <<" " <<creationTine<< " ";
+   file << id << " " << creationTime << " ";
 }
 
 void DatabaseElement::read(istream &input) {

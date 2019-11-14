@@ -19,6 +19,8 @@ protected:
 public:
     void print() override;
 
+    void read(istream &input) override;
+
     void save(fstream &file) override;
 };
 

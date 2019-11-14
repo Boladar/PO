@@ -14,7 +14,7 @@ class DatabaseElement {
 public:
     DatabaseElement();
 private:
-    time_t creationTine;
+    time_t creationTime;
 protected:
     int id;
     inline static int numberOfInstances = 0;

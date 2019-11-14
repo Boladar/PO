@@ -19,7 +19,7 @@ class DatabaseLeaf : public DatabaseCategory<T> {
 private:
     vector<DatabaseElement*> elements;
 
-    int findElementByID(int id){
+    int findElementID(int id){
         for(int i = 0; i < elements.size();i++){
             if(elements[i]->getId() == id){
                 return i;
@@ -33,7 +33,7 @@ public:
 
     DatabaseLeaf() : DatabaseCategory<T>(){}
 
-    void createObject() override {
+    int createObject() override {
 
         if (typeid(T) == typeid(VIP)) {
             elements.push_back(new VIP());
@@ -44,6 +44,8 @@ public:
         } else if (typeid(T) == typeid(Educational)) {
             elements.push_back(new Educational());
         }
+
+        return elements.back()->getId();
     }
 
 
@@ -63,7 +65,7 @@ public:
 
     void DeleteObject(int id) override {
 
-        int index = findElementByID(id);
+        int index = findElementID(id);
         if(index >= 0){
             DatabaseElement* element = elements[index];
             elements.erase(elements.begin()+index);
@@ -75,9 +77,10 @@ public:
 
     void ModifyObject(int id) override {
 
-        int index = findElementByID(id);
+        int index = findElementID(id);
         if(index >= 0){
-            //TODO MODIFY
+            elements[index]->print();
+//            elements[index]->read(cin);
         } else
             cout << "cannot modify object of id : " << id << ", it is not present in the current leaf" << endl;
 
@@ -85,7 +88,7 @@ public:
 
     void ShowObject(int id) override {
 
-        int index = findElementByID(id);
+        int index = findElementID(id);
         if(index >= 0){
             elements[index]->print();
         }else
