@@ -17,3 +17,9 @@ void Institution::save(fstream &file) {
     DatabaseElement::save(file);
     file << name << " " << numberOfEmployees << " ";
 }
+
+void Institution::read(istream &input) {
+    DatabaseElement::read(input);
+
+    input >> name >> numberOfEmployees;
+}

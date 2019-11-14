@@ -18,3 +18,8 @@ void National::save(fstream &file) {
     Institution::save(file);
     file << nationalOwnershipPercentage<< " " << submitter << " ";
 }
+
+void National::read(istream &input) {
+    Institution::read(input);
+    input >> nationalOwnershipPercentage >> submitter;
+}

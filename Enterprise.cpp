@@ -4,7 +4,7 @@
 
 #include "Enterprise.h"
 
-Enterprise::Enterprise() : Polish(){
+Enterprise::Enterprise() : Polish(), Foreign() {
 
 }
 
@@ -14,4 +14,8 @@ void Enterprise::print() {
 
 void Enterprise::save(fstream &file) {
     Polish::save(file);
+}
+
+void Enterprise::read(istream &input) {
+    Polish::read(input);
 }

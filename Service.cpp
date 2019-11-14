@@ -19,3 +19,8 @@ void Service::save(fstream &file) {
     Polish::save(file);
     file << typeOfService<< " " << target << endl;
 }
+
+void Service::read(istream &input) {
+    Polish::read(input);
+    input >> typeOfService >> target;
+}

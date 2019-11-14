@@ -18,3 +18,8 @@ void Worker::save(fstream &file) {
     Person::save(file);
     file << factoryName << " "<<salary << endl;
 }
+
+void Worker::read(istream &input) {
+    Person::read(input);
+    input >> factoryName >> salary;
+}

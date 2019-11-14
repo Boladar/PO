@@ -15,6 +15,8 @@ public:
 
     void save(fstream &file) override;
 
+    void read(istream &input) override;
+
 protected:
     string factoryName;
 private:

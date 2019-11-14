@@ -16,3 +16,8 @@ void Private::save(fstream &file) {
     Institution::save(file);
     file << numberOfParkingSpaces << " " << website << " ";
 }
+
+void Private::read(istream &input) {
+    Institution::read(input);
+    input >> numberOfParkingSpaces >> website;
+}

@@ -19,6 +19,8 @@ public:
     void print() override;
 
     void save(fstream &file) override;
+
+    void read(istream &input) override;
 };
 
 

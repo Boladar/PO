@@ -20,3 +20,8 @@ void Polish::save(fstream &file) {
     National::save(file);
     file << voivodeship << " " << airPollutionIndicator << " ";
 }
+
+void Polish::read(istream &input) {
+    National::read(input);
+    input >> voivodeship >> airPollutionIndicator;
+}
