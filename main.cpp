@@ -15,7 +15,6 @@
 #include <map>
 #include <sstream>
 #include <iterator>
-#include <iomanip>
 
 int main() {
     setlocale(LC_ALL, "En_US");
@@ -104,7 +103,6 @@ int main() {
             file.open(parsedInput[1], fstream::out);
             if(file.good()){
                 for(auto const&[key,val] : databaseDictionary){
-                    cout << key << ", " << val << endl;
                     val->Save(file);
                 }
             }
@@ -120,8 +118,6 @@ int main() {
 
                 while(!file.eof()) {
                     file >> name >> numberOfEntries;
-
-                    cout << name<< numberOfEntries<< endl;
 
                     Category* readCategory = databaseDictionary.at(name);
                     readCategory->Read(file,numberOfEntries);
