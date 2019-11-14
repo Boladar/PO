@@ -4,6 +4,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 #include "DatabaseElement.h"
 
 DatabaseElement::DatabaseElement() {
@@ -12,8 +13,8 @@ DatabaseElement::DatabaseElement() {
     this->creationTime = time(0);
 }
 
-time_t DatabaseElement::getCreationTine() {
-    return creationTime;
+void DatabaseElement::setCreationTime(time_t t){
+    creationTime = t;
 }
 
 int DatabaseElement::getId(){
@@ -38,13 +39,17 @@ void DatabaseElement::printIndent(int indentLevel) {
     }
 }
 
+
+
 void DatabaseElement::print() {
-    cout << " | id : " << id << " | creationTime:  " << creationTime;
+    tm tm = *localtime(&creationTime);
+
+    cout << " | id : " << id << " | creationTime:  " << put_time(&tm," %c");
 
 }
 
 void DatabaseElement::save(fstream &file) {
-   file << id << " " << creationTime << " ";
+    file << creationTime << " ";
 }
 
 void DatabaseElement::read(istream &input) {

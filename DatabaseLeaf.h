@@ -105,12 +105,14 @@ public:
     }
 
     void Read(fstream &file, int quantity) override {
+        time_t creationTime;
 
         for(int i = 0; i < quantity ; i++){
             this->createObject();
             DatabaseElement* element = this->elements.back();
-
-
+            file >> creationTime;
+            element->setCreationTime(creationTime);
+            element->read(file);
         }
     }
 };

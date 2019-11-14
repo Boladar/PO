@@ -15,8 +15,11 @@
 #include <map>
 #include <sstream>
 #include <iterator>
+#include <iomanip>
 
 int main() {
+    setlocale(LC_ALL, "En_US");
+
     auto* enterprise = new DatabaseLeaf<Enterprise>();
     auto* educational = new DatabaseLeaf<Educational>();
     auto* service = new DatabaseLeaf<Service>();
@@ -118,9 +121,10 @@ int main() {
                 while(!file.eof()) {
                     file >> name >> numberOfEntries;
 
-                    for( int i = 0; i  < numberOfEntries ; i++){
+                    cout << name<< numberOfEntries<< endl;
 
-                    }
+                    Category* readCategory = databaseDictionary.at(name);
+                    readCategory->Read(file,numberOfEntries);
 
                 }
             }

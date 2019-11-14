@@ -20,13 +20,13 @@ protected:
     inline static int numberOfInstances = 0;
     static void printIndent(int indentLevel);
 public:
-    time_t getCreationTine();
     int getId();
     void printID(int indentLevel);
     virtual void print();
     bool operator==(const DatabaseElement& other);
     virtual void save(fstream& file);
     virtual void read(istream& input);
+    void setCreationTime(time_t creationTime);
 };
 
 #endif //PO_DATABASEELEMENT_H
