@@ -19,3 +19,9 @@ void Foreign::save(fstream &file) {
     Private::save(file);
     file << countryOfOrigin << " " << officialLanguage << " ";
 }
+
+void Foreign::read(istream &input) {
+    Private::read(input);
+
+    input >> countryOfOrigin >> officialLanguage;
+}

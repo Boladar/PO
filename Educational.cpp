@@ -20,3 +20,8 @@ void Educational::save(fstream &file) {
     Polish::save(file);
     file << numberOfStudents << " "<< principalName << endl;
 }
+
+void Educational::read(istream &input) {
+    Polish::read(input);
+    input >> numberOfStudents >> principalName;
+}
