@@ -9,7 +9,7 @@
 #include "Polish.h"
 #include "Foreign.h"
 
-class Enterprise : public Polish, public Foreign{
+class Enterprise : public Polish, Foreign{
 protected:
     string industryName;
 private:

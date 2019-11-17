@@ -8,7 +8,7 @@
 
 #include "Private.h"
 
-class Foreign : public Private {
+class Foreign : public virtual Private {
 
 public:
     Foreign();

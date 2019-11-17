@@ -132,6 +132,8 @@ int main() {
             root->printChildrenNames(0);
         }else if( command == "EXIT"){
             break;
+        }else{
+            cout << "unknown command " << command << endl;
         }
 
     }

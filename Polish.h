@@ -8,7 +8,7 @@
 
 #include "National.h"
 
-class Polish : public National{
+class Polish : public virtual National{
 protected:
     string voivodeship;
 public:

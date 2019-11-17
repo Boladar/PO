@@ -5,21 +5,21 @@
 #include "Enterprise.h"
 #include <iostream>
 
-Enterprise::Enterprise() : Polish(), Foreign(), Institution() {
+Enterprise::Enterprise() : Polish(), Foreign(){
 
 }
 
 void Enterprise::print() {
     Polish::print();
     Foreign::print();
-    //cout << "| industryName : " << industryName << " | CEO: " << CEO << endl;
+    cout << "| industryName : " << industryName << " | CEO: " << CEO << endl;
 }
 
 void Enterprise::save(fstream &file) {
     Polish::save(file);
     Foreign::save(file);
 
-    file << industryName << " " << CEO;
+    file << industryName << " " << CEO << endl;
 }
 
 void Enterprise::read(istream &input) {

@@ -43,6 +43,8 @@ public:
             elements.push_back(new Service());
         } else if (typeid(T) == typeid(Educational)) {
             elements.push_back(new Educational());
+        }else if(typeid(T) == typeid(Enterprise)){
+            elements.push_back(new Enterprise());
         }
 
         return elements.back()->getId();
